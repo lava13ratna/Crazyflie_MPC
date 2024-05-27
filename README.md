@@ -189,19 +189,10 @@ $$Cost = \sum_{i=0}^{N-1} (x_k - x_d)^T Q (x_k - x_d) + u_k - u_d)^T + R(u_k - u
 Where:
  $$x_k$$ represents the state of the system at step k, $$x_d$$ is the reference state at step k, $$u_k$$ is the control input at step k, $$u_d$$ is the reference control input at step k, $$x_N$$ is the state at the end of the prediction horizon, $$x_e$$ is the reference state at the end of the prediction horizon, Q and R are the weighting matrices for the state and control input errors, respectively, Q_e is the weighting matrix applied at the terminal state.
 
-```
-
 
 
 ## Bibliography <a id="bibliography"></a>
-
-1. M. Islam, M. Okasha, and M. M. Idres, “Dynamics and control of quadcopter using linear model predictive control approach,” IOP Conf. Ser. Mater. Sci. Eng., vol. 270, p. 012007, Dec. 2017, doi: 10.1088/1757-899X/270/1/012007.
-2. F. Adıgüzel and T. V. Mumcu, “Discrete-time Backstepping Attitude Control of a Quadrotor UAV,” in 2019 International Artificial Intelligence and Data Processing Symposium (IDAP), Sep. 2019, pp. 1–5. doi: 10.1109/IDAP.2019.8875891.
-3. “Nonlinear Model Predictive Control of a Quadrotor.” Accessed: May 27, 2024. [Online]. Available: https://upcommons.upc.edu/handle/2117/98503
-4. “Applied Sciences | Free Full-Text | A Comparative Study for Control of Quadrotor UAVs.” Accessed: May 27, 2024. [Online]. Available: https://www.mdpi.com/2076-3417/13/6/3464
-5. “(2) MPC and MHE implementation in Matlab using Casadi - YouTube.” Accessed: May 27, 2024. [Online]. Available: https://www.youtube.com/playlist?list=PLK8squHT_Uzej3UCUHjtOtm5X7pMFSgAL
-6. M. W. Mehrez, “MMehrez/MPC-and-MHE-implementation-in-MATLAB-using-Casadi.” May 19, 2024. Accessed: May 27, 2024. [Online]. Available: https://github.com/MMehrez/MPC-and-MHE-implementation-in-MATLAB-using-Casadi
-7.	“Energies | Free Full-Text | Non-Linear Model Predictive Control Using CasADi Package for Trajectory Tracking of Quadrotor.” Accessed: May 27, 2024. [Online]. Available: https://www.mdpi.com/1996-1073/16/5/2143
+1.	“CrazySim: A Software-in-the-Loop Simulator for the Crazyflie Nano Quadrotor", Accepted ICRA 2024. Available: [https://www.mdpi.com/1996-1073/16/5/2143](https://coogan.ece.gatech.edu/papers/pdf/llanes2024crazysim.pdf)
 
 
 
