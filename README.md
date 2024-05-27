@@ -36,9 +36,9 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
    
    ![MPC solution Path for Takeoff to 1 m in rviz](Results/solution.png)
    
-1. **MPC Solution path in X,Y,Z**
+1. **MPC Solution path in X,Y,Z over time**
    
-   ![jhjh](Results/solution.png)
+   ![jhjh](Results/changes.png)
 
 
 3. **Ros2 simulation for Takeoff**
