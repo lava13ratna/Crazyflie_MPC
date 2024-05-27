@@ -1,6 +1,4 @@
-# Model Predictive Control for Crazyflie Drone Takeoff 
-
-# Drone Control: A Non-Linear Model Predictive Control approach for Trajectory Tracking and Obstacle Avoidance
+ # From Ground to Air: Crazyflie Drone Takeoff with Model Predictive Control
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -12,21 +10,15 @@
 7. [Directory Structure](#directory_struct)
 
 ## Overview <a id="overview"></a>
-This project implements a Model Predictive Control (MPC) system for the Crazyflie 2.1 drone. It uses real-time data from a Vicon motion capture system to achieve precise flight control, integrating with ROS2 and the Crazyswarm2 environment.
+This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
 
-### Why NMPC?
+- Course: Advanced Control Methods, Skoltech, 2024
+- Team Members: [Lavanya Ratnabala], [Selamawit Asfaw]
+- Final Presentation: [Link to Presentation]
 
-Quadrotors exhibit highly nonlinear behavior, especially when performing aggressive maneuvers or flying in environments with obstacles. NMPC is designed to optimize control actions by solving a nonlinear programming (NLP) problem at each time step, which allows for:
+## Problem Statement <a id="problem statement"></a>
+Drone takeoff phase involves complex dynamics due to the interactions between the UAV’s propulsion system and environmental factors like wind and turbulence.  Improper takeoff can lead to crashes or unstable flight paths, posing safety risks to nearby people and structures and potential mission failure. Our goal of our work is to create safety take off control for crazyflie using model predictive control.
 
-- **Accurate Trajectory Tracking**: Ensuring the quadrotor follows the desired path with high precision.
-- **Obstacle Avoidance**: Dynamically adjusting the trajectory to avoid collisions.
-- **Rapid Point Stabilization**: Quickly stabilizing the quadrotor at specific points, which is crucial in tasks like passing through gates in drone racing.
-
-### Key Features
-
-- **Nonlinear Dynamics Handling**: Unlike Linear MPC, NMPC can directly incorporate the nonlinear equations of motion of the quadrotor, providing more accurate control.
-- **Optimization-Based Control**: Using NLP wtih CasADi, the controller optimizes future control actions over a prediction horizon, considering both the current state and future states of the quadrotor.
-- **Flexibility and Robustness**: NMPC can adapt to various flight conditions and disturbances, making it a robust solution for real-world applications.
 
 **Team Members:**
 - Roohan Ahmed Khan
