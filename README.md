@@ -36,18 +36,22 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
    
    ![MPC solution Path for Takeoff to 1 m in rviz](Results/solution.png)
    
-1. **MPC Solution path in X,Y,Z over time**
+2. **MPC Solution path in X,Y,Z over time**
    
-   ![jhjh](Results/changes.png)
+   ![Results](Results/changes.png)
+   
+3. **Desired and Actual X,Y,Z over time**
+   
+   ![desired actual comparation](Results/desired.png)
 
 
-3. **Ros2 simulation for Takeoff**
+5. **Ros2 simulation for Takeoff**
    
    ![Passing through Gates trajectory](Results/sim.gif)
    
-4. **Obstalce Avoidance (2D View)**
+6. **Real takeoff test with crazyflie 2.1**
 
-   ![Obstacle Avoidance](results/drone_obs_avoid.gif)
+   ![Real take off test](results/real.gif)
 
 ## ## Setup and Run the project <a id="running_project"></a>
 
