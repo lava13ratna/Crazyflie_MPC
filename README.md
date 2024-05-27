@@ -184,8 +184,7 @@ $$\dot(yaw) = q * sin(roll) / cos(pitch) + r * cos(roll) / cos(pitch)$$
 **Cost Function:**
 The MPC optimizes the following cost function to balance trajectory tracking and control efforts:
 
-$$J = \sum_{k=0}^{N-1} \left[ (x_k - y_{\text{ref},k})^T Q (x_k - y_{\text{ref},k}) + (u_k - u_{\text{ref},k})^T R (u_k - u_{\text{ref},k}) \right] + (x_N - y_{\text{ref}_e})^T Q_e (x_N - y_{\text{ref}_e})
-$$
+$$Cost = \sum_{i=0}^{N-1} ((x_k - y_ref)^T Q (x_k - y_ref) + u_k - u_ref)^T + R(u_k - u_ref) + (x_N -y_ref)^T Q_e(x_N -y_ref)$$
 
 Where:
 - $$x_k$$ represents the state of the system at step $$k$$.
