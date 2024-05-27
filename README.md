@@ -32,9 +32,9 @@ The implemented MPC controller successfully worked on real drones using motion c
 ### Visual Results
 We conduct this testing  in real drone. Here we attach our results from ros2.
 
-1. **MPC Response for point stabilization with terminal cost**
+1. **MPC Solution path in Rviz**
    
-   ![Point Stabilization for N = 6 with terminal cost](results/point_stable_n_6_tp.gif)
+   ![Point Stabilization for N = 6 with terminal cost](Results/solution.png)
 
 2. **Trajectory Tracking to pass through gates**
    
