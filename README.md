@@ -57,8 +57,13 @@ For real drones
 ros2 launch crazyflie launch.py
 ```
 
+### Launch the multi agent mpc
+```sh
+ros2 launch crazyflie_mpc crazyflie_multiagent_mpc_launch.py
+```
 
-### Hover Command
+
+### Takeoff Command
 
 Publish a take off command to all drones for testing:
 ```sh
