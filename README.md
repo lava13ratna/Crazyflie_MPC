@@ -4,10 +4,9 @@
 1. [Overview](#overview)
 2. [Problem Statement](#problem_statement)
 3. [Results](#results)
-4. [Running the Project](#running_project)
+4. [Setup and Run the project](#running_project)
 5. [Appendix](#appendix)
 6. [Bibliography](#bibliography)
-7. [Directory Structure](#directory_struct)
 
 ## Overview <a id="overview"></a>
 This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
@@ -45,7 +44,9 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
 
    ![Obstacle Avoidance](results/drone_obs_avoid.gif)
 
-## Dependencies
+## ## Setup and Run the project <a id="running_project"></a>
+
+### Dependencies
 ### Acados 
 Acados can be installed by following their [documentation](https://docs.acados.org/installation/index.html).
 
