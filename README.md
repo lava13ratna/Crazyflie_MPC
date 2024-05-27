@@ -35,12 +35,17 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
 1. **MPC Solution path in Rviz**
    
    ![MPC solution Path for Takeoff to 1 m in rviz](Results/solution.png)
+   
+1. **MPC Solution path in X,Y,Z**
+   
+   ![MPC solution Path for Takeoff to 1 m in rviz](Results/xyz changes.png)
 
-2. **Ros2 simulation for Takeoff**
+
+3. **Ros2 simulation for Takeoff**
    
    ![Passing through Gates trajectory](Results/sim.gif)
    
-3. **Obstalce Avoidance (2D View)**
+4. **Obstalce Avoidance (2D View)**
 
    ![Obstacle Avoidance](results/drone_obs_avoid.gif)
 
