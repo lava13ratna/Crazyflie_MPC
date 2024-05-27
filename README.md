@@ -53,7 +53,7 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
 
    ![Real take off test](results/real.gif)
 
-## ## Setup and Run the project <a id="running_project"></a>
+## Setup and Run the project <a id="running_project"></a>
 
 ### Dependencies
 ### Acados 
