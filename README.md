@@ -161,6 +161,33 @@ The Crazyflie drone's dynamics are governed by a model predictive control (MPC) 
 State vector (x): [px, py, pz, vx, vy, vz, roll, pitch, yaw]
 Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
 ```
+#### Dynamics Model
+
+The dynamics of the Crazyflie are formulated based on Newtonian physics, incorporating forces such as gravity, thrust, and aerodynamic drag, affecting its translational and rotational dynamics:
+
+**Translational Dynamics:**
+- `dot(px) = vx`
+- `dot(py) = vy`
+- `dot(pz) = vz`
+- `dot(vx) = (Thrust / m) * sin(pitch)`
+- `dot(vy) = -(Thrust / m) * cos(pitch) * sin(roll)`
+- `dot(vz) = -(Thrust / m) * cos(pitch) * cos(roll) + g`
+
+**Rotational Dynamics:**
+- `dot(roll) = p + q * sin(roll) * tan(pitch) + r * cos(roll) * tan(pitch)`
+- `dot(pitch) = q * cos(roll) - r * sin(roll)`
+- `dot(yaw) = q * sin(roll) / cos(pitch) + r * cos(roll) / cos(pitch)`
+
+These equations account for the linear and angular motions influenced by the control inputs and are crucial for the predictive control strategy.
+
+### MPC Setup
+
+**Cost Function:**
+The MPC framework is designed to optimize the control inputs based on the prediction of future states. The objective is to minimize the following cost function, which incorporates both tracking error and control effort:
+
+```latex
+J = \sum_{k=0}^{N-1} \left[ (x_k - y_{\text{ref},k})^T Q (x_k - y_{\text{ref},k}) + (u_k - u_{\text{ref},k})^T R (u_k - u_{\text{ref},k}) \right] + (x_N - y_{\text{ref}_e})^T Q_e (x_N - y_{\text{ref}_e})
+```
 
 
 
