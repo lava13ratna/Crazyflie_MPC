@@ -12,8 +12,10 @@
 ## Overview <a id="overview"></a>
 This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
 
--Course: Advanced Control Methods, Skoltech, 2024
--Team Members: Zakhar Yagudin, Artem Myshlyaev, Aibek Akhmetkazy
+- Course: Advanced Control Methods, Skoltech, 2024
+- Team Members: Lavanya Ratnabala , Selamawit Asfaw
+- Final Presentation: [MPC Takeoff](https://docs.google.com/presentation/d/1lm82zUs13wzlbzYoQ151rFkZ4N4f6DnRfFaLImc0srU/edit?usp=sharing)
+
 
 ### Why NMPC?
 
