@@ -167,11 +167,11 @@ The dynamics of the Crazyflie are formulated based on Newtonian physics, incorpo
 
 **Translational Dynamics:**
   $$\dot{px} = vx $$
-- `dot(py) = vy`
-- `dot(pz) = vz`
-- `dot(vx) = (Thrust / m) * sin(pitch)`
-- `dot(vy) = -(Thrust / m) * cos(pitch) * sin(roll)`
-- `dot(vz) = -(Thrust / m) * cos(pitch) * cos(roll) + g`
+  $$\dot{py} = vy $$
+  $$\dot(pz) = vz $$
+  $$\dot(vx) = (Thrust / m) * sin(pitch)$$
+  $$\dot(vy) = -(Thrust / m) * cos(pitch) * sin(roll)$$
+  $$\dot(vz) = -(Thrust / m) * cos(pitch) * cos(roll) + g $$
 
 **Rotational Dynamics:**
 - `dot(roll) = p + q * sin(roll) * tan(pitch) + r * cos(roll) * tan(pitch)`
