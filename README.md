@@ -1,4 +1,4 @@
-# From Ground to Air: Crazyflie Drone Takeoff with Model Predictive Control
+![photo_5379765912464385106_y](https://github.com/lava13ratna/Crazyflie_MPC/assets/52405084/ce285f39-3a31-4293-b44e-788e656c054c)# From Ground to Air: Crazyflie Drone Takeoff with Model Predictive Control
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -44,6 +44,11 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
    
    ![desired actual comparation](Results/desired.png)
 
+4. **Optimized Control Input over time**
+   
+   ![Optimized Control input](Results/rpythrust.jpg)
+
+
 
 5. **Ros2 simulation for Takeoff**
    
@@ -51,7 +56,7 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
    
 6. **Real takeoff test with crazyflie 2.1**
 
-   ![Real take off test](results/real.gif)
+   ![Real take off test](Results/real.gif)
 
 ## Setup and Run the project <a id="running_project"></a>
 
