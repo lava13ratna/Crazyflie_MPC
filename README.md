@@ -34,11 +34,11 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
 
 1. **MPC Solution path in Rviz**
    
-   ![Point Stabilization for N = 6 with terminal cost](Results/solution.png)
+   ![MPC solution Path for Takeoff to 1 m in rviz](Results/solution.png)
 
-2. **Trajectory Tracking to pass through gates**
+2. **Ros2 simulation for Takeoff**
    
-   ![Passing through Gates trajectory](results/trajectory.jpeg)
+   ![Passing through Gates trajectory](Results/sim.gif)
    
 3. **Obstalce Avoidance (2D View)**
 
