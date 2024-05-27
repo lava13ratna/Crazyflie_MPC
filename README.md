@@ -14,16 +14,13 @@ This section provides a brief introduction to the project conducted as part of t
 
 - Course: Advanced Control Methods, Skoltech, 2024
 - Team Members: Lavanya Ratnabala, Selamawit Asfaw
-- Final Presentation: https://docs.google.com/presentation/d/1lm82zUs13wzlbzYoQ151rFkZ4N4f6DnRfFaLImc0srU/edit?usp=sharing
+- Final Presentation: [MPC Drones Final Presentation Link](https://docs.google.com/presentation/d/1lm82zUs13wzlbzYoQ151rFkZ4N4f6DnRfFaLImc0srU/edit?usp=sharing)
 
 ## Problem Statement <a id="problem statement"></a>
 Drone takeoff phase involves complex dynamics due to the interactions between the UAV’s propulsion system and environmental factors like wind and turbulence.  Improper takeoff can lead to crashes or unstable flight paths, posing safety risks to nearby people and structures and potential mission failure. Our goal of our work is to create safety take off control for crazyflie using model predictive control.
 
 
-**Team Members:**
-- Roohan Ahmed Khan
-- Malaika Zafar
-- Amber Batool
+
 
 
 **Presentation:** [MPC Drones Final Presentation Link](https://drive.google.com/drive/folders/1E5tKipE3HwYkDtr1KWob1nK1J_9sDaNs?usp=drive_link)
