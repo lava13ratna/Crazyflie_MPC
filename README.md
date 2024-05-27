@@ -56,7 +56,7 @@ We conduct this testing  in real drone. Here we attach our results from ros2.
    
 6. **Real takeoff test with crazyflie 2.1**
 
-   ![Real take off test](Results/real.gif)
+   ![Real take off test](Results/real .gif)
 
 ## Setup and Run the project <a id="running_project"></a>
 
