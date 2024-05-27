@@ -140,104 +140,32 @@ ros2 topic echo cf_1/cmd_attitude_setpoint
 - Refer to the respective documentation for any issues related to ROS 2, Crazyflie, or ACADOS.
 - In all terminal source ros2 and activate the acados.
 
-
-
-
-### Tuning of Parameters
-In order to tune or change control and system parameters in any python file, access the parameters in each file such as:
-
-#### Control and Dynamical parameters
-```bash
-...
-    T = 0.1                                 # sampling time [s]                        
-    N = 6                                   # prediction horizon (Final With Terminal Cost)                        
-    M_R = 0.065                             # kg, mass of rotor
-    R_R = 0.31                              # m, radius of rotor
-    Jr = 1/2 * M_R * R_R**2                 # inertia of rotor about COM
-    K1 = K2 = K3 = K4 = K5 = K6 = 0.2       # drag coefficient
-    m = 1.1                                 # mass of the quadrotor [kg]
-    g = 9.81                                # gravity [m/s^2]
-    Ix = 8.1*10**(-3)                       # moment of inertia about Bx axis [kg.m^2]
-    Iy =  8.1*10**(-3)                      # moment of inertia about By axis [kg.m^2]
-    Iz = 14.2*10**(-3)                      # moment of inertia about Bz axis [kg.m^2]
-    l = 0.17                                # quadrotor arm length [m]
-    b = 0.5                                 # thrust/lift coefficient [N.s^2]
-    d = 0.7                                 # scalling factor
-...
-```
-#### Cost Weights
-```bash
-...
-    Q = np.diag([1.2,1.2,1.2,1.2,1.2,1.2,1,1,1,1,1,1])             # weights for states
-    R = np.diag([0.01,0.01,0.01,0.01])                             # weights for inputs
-    Q_terminal = np.diag([5, 5, 5, 3, 3, 3, 1, 1, 1, 1, 1, 1])     # weights for terminal states
-...
-```
-
-
 ## Appendix <a id="appendix"></a>
 
-### Quadrotor Dynamics
+### System Dynamics and MPC Configuration
 
-The quadrotor's dynamics are described by the following state-space equations, where the state vector includes positions, orientations, and their respective velocities, and the control inputs are the propeller speeds.
+The Crazyflie drone's dynamics are governed by a model predictive control (MPC) strategy, designed to handle the complexities of real-time aerial navigation. Below is a detailed breakdown of the system's state variables, control inputs, dynamics model, and the MPC setup.
 
-#### States
+#### State Variables and Control Inputs
 
-- Positions in the inertial frame: $$\( x, y, z \)$$ 
-- Roll, pitch, and yaw angles: $$\( \phi, \theta, \psi \)$$ 
-- Velocities in the inertial frame: $$\( \dot{x}, \dot{y}, \dot{z} \)$$ 
-- Angular velocities: $$\( \dot{\phi}, \dot{\theta}, \dot{\psi} \)$$ 
+**State Variables (`x`):**
+- `px, py, pz`: Position coordinates in the inertial frame (meters).
+- `vx, vy, vz`: Velocity components along each axis (meters/second).
+- `roll, pitch, yaw`: Euler angles for orientation (radians).
 
-#### Inputs
-- : Propeller speeds: $$\( u_1, u_2, u_3, u_4 \)$$
+**Control Inputs (`u`):**
+- `roll_c, pitch_c, yaw_c`: Commanded angles for roll, pitch, and yaw (radians).
+- `thrust`: Commanded thrust (Newtons).
 
-#### Equations of Motion
-
-1. **Position Dynamics:**  
-   $$\dot{x} = v_x $$
-   $$\dot{y} = v_y $$
-   $$\dot{z} = v_z $$
+```plaintext
+State vector (x): [px, py, pz, vx, vy, vz, roll, pitch, yaw]
+Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
 
 
-2. **Orientation Dynamics:**
-   $$\dot{\phi} = \omega_x $$
-   $$\dot{\theta} = \omega_y $$
-   $$\dot{\psi} = \omega_z $$
-
-3. **Velocity Dynamics:**
-
-   $$\dot{v_x} = \frac{1}{m}\left(\cos(\phi) \sin(\theta) \cos(\psi) + \sin(\phi) \sin(\psi)\right) f_1 - \frac{K_1 v_x}{m}$$
-   $$\dot{v_y} = \frac{1}{m}\left(\cos(\phi) \sin(\theta) \sin(\psi) - \sin(\phi) \cos(\psi)\right) f_1 - \frac{K_2 v_y}{m}$$
-   $$\dot{v_z} = -\frac{1}{m}\left(\cos(\psi) \cos(\theta)\right) f_1 + g - \frac{K_3 v_z}{m}$$
 
 
-4. **Angular Velocity Dynamics:**
-   $$\dot{\omega_x} = \frac{I_y - I_z}{I_x} \omega_y \omega_z + \frac{l}{I_x} f_2 - \frac{K_4 l}{I_x} \omega_x + \frac{J_r}{I_x} \omega_y (u_1 - u_2 + u_3 - u_4)$$
-   $$\dot{\omega_y} = \frac{I_z - I_x}{I_y} \omega_x \omega_z + \frac{l}{I_y} f_3 - \frac{K_5 l}{I_y} \omega_y + \frac{J_r}{I_y} \omega_z (u_1 - u_2 + u_3 - u_4)$$
-   $$\dot{\omega_z} = \frac{I_x - I_y}{I_z} \omega_x \omega_y + \frac{1}{I_z} f_4 - \frac{K_6}{I_z} \omega_z$$
 
-#### Forces and Torques
-- Thrust: $$f_1 = b(u_1^2 + u_2^2 + u_3^2 + u_4^2) $$
-- Roll Moment: $$f_2 = b(-u_2^2 + u_4^2) $$
-- Pitch Moment: $$f_3 = b(u_1^2 - u_3^2) $$
-- Yaw Moment: $$f_4 = d(-u_1^2 + u_2^2 - u_3^2 + u_4^2) $$
 
-### State and Input Constraints
-#### State Constraints
-- Position: $$-\infty \leq x,y,z \leq +\infty$$
-- Orientation: $$\( -\pi/2 \leq \phi, \theta, \psi \leq \pi/2 \)$$
-- Velocities: $$\( -5 \, \text{m/s} \leq v_x, v_y, v_z \leq 5 \, \text{m/s} \)$$
-- Angular Velocities: $$\( -0.05 \, \text{rad/s} \leq \omega_x, \omega_y, \omega_z \leq 0.05 \, \text{rad/s} \)$$
-
-#### Input Constraints
-- Propeller Speeds: $$\( 0 \leq u_1, u_2, u_3, u_4 \leq 1200 \)$$
-
-### Cost Function 
-
-The cost function is designed to minimize the error between the current state and the desired state while penalizing large control inputs. It consists of a quadratic term for state deviation and another for control effort.
-
-$$Cost = \sum_{i=0}^{N-1} ((x_i - x_p)^T Q (x_i - x_p) + u_i^T R u_i) + (x_N - x_p)^T Q_{terminal} (x_N - x_p)$$
-where $$x_p$$ is desired state, $$x_i$$ is current state and $$x_N$$ is terminal state
 
 ## Bibliography <a id="bibliography"></a>
 
