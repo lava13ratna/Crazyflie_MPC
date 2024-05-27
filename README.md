@@ -184,15 +184,15 @@ $$\dot(yaw) = q * sin(roll) / cos(pitch) + r * cos(roll) / cos(pitch)$$
 **Cost Function:**
 The MPC optimizes the following cost function to balance trajectory tracking and control efforts:
 
-$$Cost = \sum_{i=0}^{N-1} (x_k - y_(ref))^T Q (x_k - y_(ref)) + u_k - u_(ref))^T + R(u_k - u_(ref)) + (x_N -y_(ref))^T Q_e(x_N -y_(ref))$$
+$$Cost = \sum_{i=0}^{N-1} (x_k - x_d)^T Q (x_k - x_d) + u_k - u_d)^T + R(u_k - u_d) + (x_N - x_d)^T Q_e(x_N - x_e)$$
 
 Where:
 - $$x_k$$ represents the state of the system at step $$k$$.
-- $$y_{\text{ref},k}$$ is the reference state at step $$k$$.
+- $$x_d$$ is the reference state at step $$k$$.
 - $$u_k$$ is the control input at step $$k$$.
-- $$u_{\text{ref},k}$$ is the reference control input at step $$k$$.
+- $$u_d$$ is the reference control input at step $$k$$.
 - $$x_N$$ is the state at the end of the prediction horizon.
-- $$y_{\text{ref}_e}$$ is the reference state at the end of the prediction horizon.
+- $$x_e}$$ is the reference state at the end of the prediction horizon.
 - $$Q$$ and $$R$$ are the weighting matrices for the state and control input errors, respectively.
 - $$Q_e$$ is the weighting matrix applied at the terminal state.
 
