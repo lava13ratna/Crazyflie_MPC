@@ -62,12 +62,29 @@ ros2 launch crazyflie launch.py
 ros2 launch crazyflie_mpc crazyflie_multiagent_mpc_launch.py
 ```
 
-
+### Checking the topics before execute takeoff
+check the available topic names and find the poses
+```sh
+ros2 topic list
+```
+check the named drone publishing its positional and orientational data
+```sh
+ros2 topic echo cf_1/pose
+```
 ### Takeoff Command
 
 Publish a take off command to all drones for testing:
 ```sh
 ros2 topic pub /all/mpc_takeoff std_msgs/msg/Empty "{}"
+```
+### Find the mpc solution and path and optimized control input from running this topics
+check the mpc solution path
+```sh
+ros2 topic echo cf_1/mpc_solution_path
+```
+check the optimized control input
+```sh
+ros2 topic echo cf_1/cmd_attitude_setpoint
 ```
 
 ## Notes
