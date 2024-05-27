@@ -16,48 +16,22 @@ This section provides a brief introduction to the project conducted as part of t
 - Team Members: Lavanya Ratnabala , Selamawit Asfaw
 - Final Presentation: [MPC Takeoff](https://docs.google.com/presentation/d/1lm82zUs13wzlbzYoQ151rFkZ4N4f6DnRfFaLImc0srU/edit?usp=sharing)
 
-
-### Why NMPC?
-
-Quadrotors exhibit highly nonlinear behavior, especially when performing aggressive maneuvers or flying in environments with obstacles. NMPC is designed to optimize control actions by solving a nonlinear programming (NLP) problem at each time step, which allows for:
-
-- **Accurate Trajectory Tracking**: Ensuring the quadrotor follows the desired path with high precision.
-- **Obstacle Avoidance**: Dynamically adjusting the trajectory to avoid collisions.
-- **Rapid Point Stabilization**: Quickly stabilizing the quadrotor at specific points, which is crucial in tasks like passing through gates in drone racing.
-
-### Key Features
-
-- **Nonlinear Dynamics Handling**: Unlike Linear MPC, NMPC can directly incorporate the nonlinear equations of motion of the quadrotor, providing more accurate control.
-- **Optimization-Based Control**: Using NLP wtih CasADi, the controller optimizes future control actions over a prediction horizon, considering both the current state and future states of the quadrotor.
-- **Flexibility and Robustness**: NMPC can adapt to various flight conditions and disturbances, making it a robust solution for real-world applications.
-
-**Team Members:**
-- Roohan Ahmed Khan
-- Malaika Zafar
-- Amber Batool
-
-
-**Presentation:** [MPC Drones Final Presentation Link](https://drive.google.com/drive/folders/1E5tKipE3HwYkDtr1KWob1nK1J_9sDaNs?usp=drive_link)
+### Why Takeoff is important
+In the last decade, drones have gained immense popularity, revolutionizing sectors like agriculture, surveillance, delivery, and entertainment with their efficiency, precision, and automation. However  takeoff phase involves complex dynamics due to the interactions between the UAV’s propulsion system and environmental factors like wind and turbulence.  Improper takeoff can lead to crashes or unstable flight paths, posing safety risks to nearby people and structures and potential mission failure. 
 
 ## Problem Statement <a id="problem_statement"></a>
-The primary objective of this project is to develop a control system for fully non-linear quadrotor system that can achieve following tasks:
-- Fast point stabilization 
-- Follow trajectory to pass through gates precisely
-- Avoid obstacles using state constraints
-  
-Quadrotors are widely used in various applications such as aerial photography, surveillance, delivery services and sports such as drone racing. However, their nonlinear dynamics and the presence of external disturbances make control a challenging task.
+Traditional control methods like PID controllers often struggle with the precision and proactive adjustments required during the takeoff phase of drone flights, particularly in handling dynamic external forces such as wind and turbulence. These external forces can introduce instabilities that are not effectively anticipated by reactive control systems, leading to potential safety risks and inefficiencies during takeoff. Model Predictive Control (MPC) to manage the Crazyflie drone's takeoff phase. MPC enhances takeoff stability and accuracy by using a dynamic model to predict future states and adjust controls in real-time. 
 
-### Importance
-The project explores the application of MPC for trajectory tracking and obstacle avoidance while passing through gates, highlighting its potential for enhancing performance in this intense sport. The insights gained pave the way for future innovations, offering the potential to revolutionize drone racing with cutting-edge algorithms and strategies. Additionally, addressing the nonlinear dynamics and external disturbances inherent in quadrotor systems is vital for ensuring safe and reliable operation in real-world scenarios. This project emphasizes the importance of MPC in overcoming these challenges, setting the stage for future advancements in drone racing technology.
 
 ## Results <a id="results"></a>
-The implemented MPC controller successfully stabilizes the drone at the desired point and follows specified trajectories. The results include:
-- Response of MPC for single point stabilization
-- Stability in orientation and velocity for trajectory tracking.
-- Obstacle Avoidance 2D Animation
+The implemented MPC controller successfully worked on real drones using motion capture and VICON tracking stabilizes the drone at the desired takeoff point:
 
-### Visual Aids
-The following plots illustrate the performance of the MPC controller:
+-By leveraging MPC, the drone is able to proactively predict and achive the takesoff. Additionally, the use of MPC reduces the occurrence of instabilities and enhances the safety and reliability of the takeoff process.
+-Empirical data shows a marked small deviation from the planned takeoff path and a more consistent achievement of desired altitude and orientation targets.
+
+
+### Visual Results
+We conduct this testing  in real drone. Here we attach our results from ros2.
 
 1. **MPC Response for point stabilization with terminal cost**
    
