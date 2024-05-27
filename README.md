@@ -160,10 +160,7 @@ The Crazyflie drone's dynamics are governed by a model predictive control (MPC) 
 ```plaintext
 State vector (x): [px, py, pz, vx, vy, vz, roll, pitch, yaw]
 Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
-
-
-
-
+```
 
 
 
