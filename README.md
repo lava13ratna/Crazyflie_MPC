@@ -174,11 +174,10 @@ The dynamics of the Crazyflie are formulated based on Newtonian physics, incorpo
   $$\dot(vz) = -(Thrust / m) * cos(pitch) * cos(roll) + g $$
 
 **Rotational Dynamics:**
-- `dot(roll) = p + q * sin(roll) * tan(pitch) + r * cos(roll) * tan(pitch)`
-- `dot(pitch) = q * cos(roll) - r * sin(roll)`
-- `dot(yaw) = q * sin(roll) / cos(pitch) + r * cos(roll) / cos(pitch)`
+ $$\dot(roll) = p + q * sin(roll) * tan(pitch) + r * cos(roll) * tan(pitch)$$
+ $$\dot(pitch) = q * cos(roll) - r * sin(roll)$$
+$$\dot(yaw) = q * sin(roll) / cos(pitch) + r * cos(roll) / cos(pitch)$$
 
-These equations account for the linear and angular motions influenced by the control inputs and are crucial for the predictive control strategy.
 
 ### MPC Setup
 
