@@ -8,7 +8,6 @@ ROS 2 Humble can be found [here](https://docs.ros.org/en/humble/Installation.htm
 ## Crazyswarm2 
 Setup the crazyswarm2 package.Official documentation about setting up this package can be found [here](https://imrclab.github.io/crazyswarm2/installation.html). Here clone our  modified version of Crazyswarm2 package with attitude control.
 
-## Motion Capture Pacakge
 
 # Crazyflie_MPC Setup and Launch Instructions
 
@@ -19,8 +18,14 @@ This guide provides step-by-step instructions to set up the  environment and lau
 Ensure you have the following dependencies installed:
 - ROS 2
 - ACADOS library
+- crazyswarm2
+- Vicon Tracking motion capture system
 
 ## Setup
+### Setup the crazyflie 
+Create object with correct marker positions in vicon tracker.
+In the crazyswarm2 package go to config -> crazyflie.yaml file and config your crazyflie radio uri. you can find the uri by call cfclient in the terminal.and change the name of crazyflie as your vicon tracker object.
+In the motioncapture.yaml file configure your correct marker positions.
 
 ### Activate the Environment
 
@@ -51,28 +56,22 @@ For real drones
 ```sh
 ros2 launch crazyflie launch.py
 ```
-### Launch the Crazyflie Multi-Agent MPC
 
-if needed modify the Crazyflie counts in crazyflie_multiagent_mpc.py N_AGENTS
-
-Launch the multi-agent model predictive control (MPC):
-```sh
-ros2 launch crazyflie_mpc crazyflie_multiagent_mpc_launch.py
-```
 
 ### Hover Command
 
-Publish a hover command to all drones for testing:
+Publish a take off command to all drones for testing:
 ```sh
-ros2 topic pub /all/mpc_hover std_msgs/msg/Empty "{}"
+ros2 topic pub /all/mpc_takeoff std_msgs/msg/Empty "{}"
 ```
 
 ## Notes
 
 - Ensure all dependencies are correctly installed and paths are set properly.
 - Refer to the respective documentation for any issues related to ROS 2, Crazyflie, or ACADOS.
+- In all terminal source ros2 and activate the acados.
 
-## Contribution
+
 
 Feel free to open issues or contribute to this project. Your feedback and contributions are welcome!
 
