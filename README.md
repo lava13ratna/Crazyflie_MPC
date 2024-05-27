@@ -1,6 +1,4 @@
-# acm_mpc_drones
-
-# Drone Control: A Non-Linear Model Predictive Control approach for Trajectory Tracking and Obstacle Avoidance
+# From Ground to Air: Crazyflie Drone Takeoff with Model Predictive Control
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -12,7 +10,10 @@
 7. [Directory Structure](#directory_struct)
 
 ## Overview <a id="overview"></a>
-In this project, we implement Nonlinear Model Predictive Control (NMPC) to achieve advanced control for quadrotor drones. Unlike traditional Linear MPC, NMPC can handle the nonlinear dynamics of quadrotors, making it a more suitable approach for high-precision and dynamic tasks such as drone racing.
+This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
+
+-Course: Advanced Control Methods, Skoltech, 2024
+-Team Members: Zakhar Yagudin, Artem Myshlyaev, Aibek Akhmetkazy
 
 ### Why NMPC?
 
