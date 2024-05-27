@@ -187,7 +187,7 @@ The MPC optimizes the following cost function to balance trajectory tracking and
 $$Cost = \sum_{i=0}^{N-1} (x_k - x_d)^T Q (x_k - x_d) + u_k - u_d)^T + R(u_k - u_d) + (x_N - x_d)^T Q_e(x_N - x_e)$$
 
 Where:
- \x_k\ represents the state of the system at step k, $$x_d$$ is the reference state at step k, $$u_k$$ is the control input at step k, $$u_d$$ is the reference control input at step $$k$$, $$x_N$$ is the state at the end of the prediction horizon, $$x_e$$ is the reference state at the end of the prediction horizon, Q and R are the weighting matrices for the state and control input errors, respectively, Q_e is the weighting matrix applied at the terminal state.
+ $$x_k$$ represents the state of the system at step k, $$x_d$$ is the reference state at step k, $$u_k$$ is the control input at step k, $$u_d$$ is the reference control input at step k, $$x_N$$ is the state at the end of the prediction horizon, $$x_e$$ is the reference state at the end of the prediction horizon, Q and R are the weighting matrices for the state and control input errors, respectively, Q_e is the weighting matrix applied at the terminal state.
 
 ```
 
