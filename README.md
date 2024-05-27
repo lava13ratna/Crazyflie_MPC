@@ -166,12 +166,9 @@ Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
 The dynamics of the Crazyflie are formulated based on Newtonian physics, incorporating forces such as gravity, thrust, and aerodynamic drag, affecting its translational and rotational dynamics:
 
 **Translational Dynamics:**
-  $$ \dot{px} = vx $$
-  $$ \dot{py} = vy $$
- $$ \dot{pz} = vz $$
-  $$ \dot{vx} = (Thrust / m) * sin(pitch) $$
-  $$ \dot{vy} = -(Thrust / m) * cos(pitch) * sin(roll) $$
-  $$ \dot{vz} = -(Thrust / m) * cos(pitch) * cos(roll) + g $$
+   $$\dot{x} = v_x $$
+   $$\dot{y} = v_y $$
+   $$\dot{z} = v_z $$
 
 **Rotational Dynamics:**
 - `dot(roll) = p + q * sin(roll) * tan(pitch) + r * cos(roll) * tan(pitch)`
