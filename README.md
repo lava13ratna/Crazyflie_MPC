@@ -182,10 +182,21 @@ $$\dot(yaw) = q * sin(roll) / cos(pitch) + r * cos(roll) / cos(pitch)$$
 ### MPC Setup
 
 **Cost Function:**
-The MPC framework is designed to optimize the control inputs based on the prediction of future states. The objective is to minimize the following cost function, which incorporates both tracking error and control effort:
+The MPC optimizes the following cost function to balance trajectory tracking and control efforts:
 
-```latex
-J = \sum_{k=0}^{N-1} \left[ (x_k - y_{\text{ref},k})^T Q (x_k - y_{\text{ref},k}) + (u_k - u_{\text{ref},k})^T R (u_k - u_{\text{ref},k}) \right] + (x_N - y_{\text{ref}_e})^T Q_e (x_N - y_{\text{ref}_e})
+$$J = \sum_{k=0}^{N-1} \left[ (x_k - y_{\text{ref},k})^T Q (x_k - y_{\text{ref},k}) + (u_k - u_{\text{ref},k})^T R (u_k - u_{\text{ref},k}) \right] + (x_N - y_{\text{ref}_e})^T Q_e (x_N - y_{\text{ref}_e})
+$$
+
+Where:
+- $$x_k$$ represents the state of the system at step $$k$$.
+- $$y_{\text{ref},k}$$ is the reference state at step $$k$$.
+- $$u_k$$ is the control input at step $$k$$.
+- $$u_{\text{ref},k}$$ is the reference control input at step $$k$$.
+- $$x_N$$ is the state at the end of the prediction horizon.
+- $$y_{\text{ref}_e}$$ is the reference state at the end of the prediction horizon.
+- $$Q$$ and $$R$$ are the weighting matrices for the state and control input errors, respectively.
+- $$Q_e$$ is the weighting matrix applied at the terminal state.
+
 ```
 
 
