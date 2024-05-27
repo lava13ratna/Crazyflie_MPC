@@ -1,10 +1,10 @@
-# Project Title
+# Model Predictive Control for Crazyflie drone
 
 ## Overview
 This section provides a brief introduction to the project conducted as part of the Advanced Control Methods course at Skoltech in 2024. It includes the fundamental objectives of the project, information about the team members, and a link to the final presentation.
 
 - Course: Advanced Control Methods, Skoltech, 2024
-- Team Members: [Member1], [Member2], [Member3], [Member4]
+- Team Members: [Lavanya Ratnabala], [Member2], [Member3], [Member4]
 - Final Presentation: [Link to Presentation]
 
 ---
@@ -15,7 +15,6 @@ This section provides a brief introduction to the project conducted as part of t
 - [Problem Statement](#problem-statement)
 - [Results](#results)
 - [Run the Project](#run-the-project)
-- [Other Section](#other-section)
 - [Bibliography](#bibliography)
 
 ---
