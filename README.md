@@ -222,9 +222,9 @@ Where:
  
 #### Cost Weights
 
-   Q = np.diag([20., 20., 20., 2., 2., 2., 1., 1., 1.])   # state weighting matrix
-   R = diag(horzcat(1., 1., 1., 1.))                      # control input weighting matrix.
-   Q_e = block_diag(Q,R)                                  # Combined Weighting Matrix 
+   Q = np.diag([20., 20., 20., 2., 2., 2., 1., 1., 1.])   
+   R = diag(horzcat(1., 1., 1., 1.))                      
+   Q_e = block_diag(Q,R)                                  
 
 ## Bibliography <a id="bibliography"></a>
 1.	“CrazySim: A Software-in-the-Loop Simulator for the Crazyflie Nano Quadrotor", Accepted ICRA 2024. Available: [https://www.mdpi.com/1996-1073/16/5/2143](https://coogan.ece.gatech.edu/papers/pdf/llanes2024crazysim.pdf)
