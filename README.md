@@ -176,6 +176,23 @@ The Crazyflie drone's dynamics are governed by a model predictive control (MPC) 
 State vector (x): [px, py, pz, vx, vy, vz, roll, pitch, yaw]
 Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
 ```
+#### Control and Dynamical Parameters
+
+**Quadrotor Parameters:**
+    mass = 0.027#0.028
+    arm_length= 0.0397#0.044
+    Ixx= 1.4e-5#2.3951e-5
+    Iyy=1.4e-5#2.3951e-5
+    Izz=2.17e-5#3.2347e-5
+    cm=2.4e-6
+    tau= 0.08
+
+**MPC Parameters:**
+    mpc_tf = 1.0
+    mpc_N = 50
+    control_update_rate = 50
+
+
 #### Dynamics Model
 
 The dynamics of the Crazyflie are formulated based on Newtonian physics, incorporating forces such as gravity, thrust, and aerodynamic drag, affecting its translational and rotational dynamics:
