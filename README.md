@@ -219,8 +219,12 @@ $$Cost = \sum_{i=0}^{N-1} (x_k - x_d)^T Q (x_k - x_d) + u_k - u_d)^T + R(u_k - u
 
 Where:
  $$x_k$$ represents the state of the system at step k, $$x_d$$ is the reference state at step k, $$u_k$$ is the control input at step k, $$u_d$$ is the reference control input at step k, $$x_N$$ is the state at the end of the prediction horizon, $$x_e$$ is the reference state at the end of the prediction horizon, Q and R are the weighting matrices for the state and control input errors, respectively, Q_e is the weighting matrix applied at the terminal state.
+ 
+#### Cost Weights
 
-
+   Q = np.diag([20., 20., 20., 2., 2., 2., 1., 1., 1.])   # state weighting matrix
+   R = diag(horzcat(1., 1., 1., 1.))                      # control input weighting matrix.
+   Q_e = block_diag(Q,R)                                  # Combined Weighting Matrix 
 
 ## Bibliography <a id="bibliography"></a>
 1.	“CrazySim: A Software-in-the-Loop Simulator for the Crazyflie Nano Quadrotor", Accepted ICRA 2024. Available: [https://www.mdpi.com/1996-1073/16/5/2143](https://coogan.ece.gatech.edu/papers/pdf/llanes2024crazysim.pdf)
