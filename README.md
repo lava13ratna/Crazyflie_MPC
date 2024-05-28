@@ -177,7 +177,8 @@ State vector (x): [px, py, pz, vx, vy, vz, roll, pitch, yaw]
 Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
 ```
 #### Control and Dynamical Parameters
-
+```bash
+...
 **Quadrotor Parameters:**
     mass = 0.027#0.028
     arm_length= 0.0397#0.044
@@ -191,8 +192,8 @@ Control vector (u): [roll_c, pitch_c, yaw_c, thrust]
     mpc_tf = 1.0
     mpc_N = 50
     control_update_rate = 50
-
-
+...
+```
 #### Dynamics Model
 
 The dynamics of the Crazyflie are formulated based on Newtonian physics, incorporating forces such as gravity, thrust, and aerodynamic drag, affecting its translational and rotational dynamics:
